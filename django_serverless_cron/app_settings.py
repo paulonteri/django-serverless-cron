@@ -1,3 +1,5 @@
-from django.conf import settings
 
-SERVERLESS_CRONJOBS = getattr(settings, 'SERVERLESS_CRONJOBS', [])
+
+class Settings():
+    def __init__(self, settings):
+        self.SERVERLESS_CRONJOBS = getattr(settings, 'SERVERLESS_CRONJOBS', [])

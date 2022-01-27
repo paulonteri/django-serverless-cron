@@ -8,9 +8,12 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 from django.utils import timezone
 
-from . import app_settings as settings
+from .app_settings import Settings
 from .models import JobRun
 from .utils import run_function_from_path
+
+from django.conf import settings
+
 
 logger = logging.getLogger(__name__)
 
@@ -114,11 +117,11 @@ def run_all_jobs():
     """
     Runs all jobs defined in settings
     """
+    app_settings = Settings(settings)
     jobs = [
         Job(frequency=frequency, function_path=function_path, kwargs=kwargs)
-        for frequency, function_path, kwargs in settings.SERVERLESS_CRONJOBS
+        for frequency, function_path, kwargs in app_settings.SERVERLESS_CRONJOBS
     ]
-    print("Hi")
 
     for job in jobs:
         job.run()
