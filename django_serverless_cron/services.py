@@ -46,7 +46,7 @@ class Job:
         Jobs that are not valid to run (based on their frequency) are skipped .
         """
         logger.info(f"Running job: {self.__str__()}")
-        if self._is_valid_time_for_job_to_run():
+        if not self._is_valid_time_for_job_to_run():
             logger.info(f"Job terminated. Not valid time for job run: {self.__str__()}")
             return
 
@@ -61,8 +61,7 @@ class Job:
                 run_function_from_path(self.function_path, self.kwargs)
         except Exception as e:
             job_run.error = str(e)
-            logger.info("Error running job: ")
-            logger.error(str(e))
+            logger.info(f"Error running job: {str(e)}")
         else:
             job_run.time_finished_running = timezone.now()
         finally:
