@@ -46,6 +46,10 @@ output/*/index.html
 # Sphinx
 docs/_build
 
+.DS_Store
+
+db.sqlite3
+
 # virtual environment
 ./venv
 ./env
