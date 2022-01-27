@@ -4,11 +4,11 @@ import datetime
 import logging
 from typing import Dict
 
-from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import transaction
 from django.utils import timezone
 
+from . import app_settings as settings
 from .models import JobRun
 from .utils import run_function_from_path
 
@@ -119,6 +119,7 @@ def run_all_jobs():
         Job(frequency=frequency, function_path=function_path, kwargs=kwargs)
         for frequency, function_path, kwargs in settings.SERVERLESS_CRONJOBS
     ]
+    print("Hi")
 
     for job in jobs:
         job.run()
