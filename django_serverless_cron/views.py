@@ -6,7 +6,7 @@ from django.views import View
 from .services import run_all_jobs
 
 
-class MyView(View):
+class RunJobsView(View):
 
     def get(self, request, *args, **kwargs):
         run_all_jobs()
