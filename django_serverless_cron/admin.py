@@ -6,11 +6,13 @@ from .models import JobRun
 from .services import Job
 
 
-@admin.action(description='Re-run the selected jobs')
 def run_selected_jobs(modeladmin, request, queryset):
     for job_run in queryset:
         job = Job(function_path=job_run.function_path, kwargs=job_run.kwargs)
         job.run()
+
+
+run_selected_jobs.short_description = 'Re-run selected jobs'
 
 
 @admin.register(JobRun)
