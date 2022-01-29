@@ -56,3 +56,4 @@ db.sqlite3
 # virtual environment
 ./venv
 ./env
+coverage.xml
