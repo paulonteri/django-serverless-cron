@@ -5,11 +5,14 @@ Django Serverless Cron
 .. image:: https://badge.fury.io/py/django-serverless-cron.svg
     :target: https://badge.fury.io/py/django-serverless-cron
 
-.. .. image:: https://travis-ci.org/paulonteri/django-serverless-cron.svg?branch=master
-..     :target: https://travis-ci.org/paulonteri/django-serverless-cron
+.. image:: https://github.com/paulonteri/django-serverless-cron/actions/workflows/tests.yml/badge.svg
+    :target: https://github.com/paulonteri/django-serverless-cron/actions/workflows/tests.yml
 
-.. .. image:: https://codecov.io/gh/paulonteri/django-serverless-cron/branch/master/graph/badge.svg
-..     :target: https://codecov.io/gh/paulonteri/django-serverless-cron
+.. image:: https://codecov.io/gh/paulonteri/django-serverless-cron/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/paulonteri/django-serverless-cron
+
+.. image:: https://readthedocs.org/projects/django-serverless-cron/badge/?version=latest
+     :target: http://django-serverless-cron.readthedocs.io/?badge=latest
 
 Django Serverless Cron
 
