@@ -1,5 +1,5 @@
 =============================
-Django Serverless Cron
+django-serverless-cron
 =============================
 
 .. image:: https://badge.fury.io/py/django-serverless-cron.svg
@@ -14,17 +14,14 @@ Django Serverless Cron
 .. image:: https://readthedocs.org/projects/django-serverless-cron/badge/?version=latest
      :target: http://django-serverless-cron.readthedocs.io/?badge=latest
 
-Django Serverless Cron
+django-serverless-cron is a Django app with a simpler approach running cron jobs (mostly in a serverless environment) through HTTP requests with an integration with the Django admin. This allows you to run any task without having to manage always-on infrastructure, DevOps, or servers.
+
+There is also an option to run jobs via a management commands and the Django admin.
 
 Documentation
 -------------
 
-The full documentation is at https://django-serverless-cron.readthedocs.io.
-
-Features
---------
-
-Run cron jobs easily in a serverless environment.
+Documentation, including installation and configuration instructions, is graciously hosted at https://django-serverless-cron.readthedocs.io.
 
 Quickstart
 ----------
@@ -50,15 +47,15 @@ Add it to your `INSTALLED_APPS`:
         # ...
     )
 
-Add Django Serverless Cron's cron jobs to your settings file:
+Add jobs to your settings file:
 
 .. code-block:: python
 
     CRONJOBS = [
         # (
-        #   '1_hours', # frequency (days, minutes, hours, weeks) -> in this case, every one hour
-        #   'mail.jobs.send_mail_function', # path to task/function functions -> in this case, send_mail_function()
-        #   {'kwarg1': 'foo'} # kwargs passed to the function
+        #   '1_hours',                       # frequency (days, minutes, hours, weeks) -> in this case, every one hour
+        #   'mail.jobs.send_mail_function',  # path to task/function functions -> in this case, send_mail_function()
+        #   {'kwarg1': 'foo'}                # kwargs passed to the function
         # ),
         (
             '1_day',
@@ -88,14 +85,18 @@ Add the jobs to your URL patterns:
         #...
     ]
 
-
 Running Jobs
-^^^^^^^^^^^^
+------------
 
-Running via the view/API
-""""""""""""""""""""""""
+Running Jobs through HTTP requests
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Call the `/run` path to run all jobs:
+
+In Development
+""""""""""""""
+
+Example:
 
 .. code-block:: bash
 
@@ -109,7 +110,15 @@ or
 
     x = requests.get('http://localhost:8000/run')
 
+In Production
+"""""""""""""
 
+Similarly calling the `/run` path via a manages service which are usually rediculously cheap. Examples:
+
+- https://cron-job.org
+- https://cloud.google.com/scheduler
+- https://www.easycron.com
+- https://cronhub.io
 
 
 Tests
@@ -131,6 +140,12 @@ Development commands
 
     pip install -r requirements_dev.txt
     invoke -l
+    
+
+Related
+-------
+
+- https://dev.to/googlecloud/when-you-re-not-around-trigger-cloud-run-on-a-schedule-53p4
 
 
 Credits
