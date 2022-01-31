@@ -5,7 +5,7 @@ Credits
 Development Lead
 ----------------
 
-* Paul Onteri <me@paulonteri.com>
+* Paul Onteri <https://paulonteri.com>
 
 Contributors
 ------------
