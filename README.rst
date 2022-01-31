@@ -14,14 +14,14 @@ django-serverless-cron
 .. image:: https://readthedocs.org/projects/django-serverless-cron/badge/?version=latest
      :target: http://django-serverless-cron.readthedocs.io/?badge=latest
 
-django-serverless-cron is a Django app with a simpler approach running cron jobs (mostly in a serverless environment) through HTTP requests with an integration with the Django admin. This allows you to run any task without having to manage always-on infrastructure, DevOps, or servers.
+django-serverless-cron is a Django app with a simpler approach running cron jobs (mostly in a serverless environment) through HTTP requests with an integration with the Django admin. This allows you to run any task without having to manage always-on infrastructure.
 
-There is also an option to run jobs via a management commands and the Django admin.
+There is also an option to run jobs via management commands and the Django admin.
 
 Documentation
 -------------
 
-Documentation, including installation and configuration instructions, is graciously hosted at https://django-serverless-cron.readthedocs.io.
+Documentation is graciously hosted at https://django-serverless-cron.readthedocs.io.
 
 Quickstart
 ----------
@@ -88,13 +88,13 @@ Add the jobs to your URL patterns:
 Running Jobs
 ------------
 
+In Development
+^^^^^^^^^^^^^^
+
 Running Jobs through HTTP requests
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""""
 
 Call the `/run` path to run all jobs:
-
-In Development
-""""""""""""""
 
 Example:
 
@@ -111,9 +111,9 @@ or
     x = requests.get('http://localhost:8000/run')
 
 In Production
-"""""""""""""
+^^^^^^^^^^^^^
 
-Similarly calling the `/run` path via a manages service which are usually rediculously cheap. Examples:
+Similar to in development, we can call the `/run` path via managed services which are usually ridiculously cheap. Examples:
 
 - https://cron-job.org
 - https://cloud.google.com/scheduler
@@ -140,7 +140,7 @@ Development commands
 
     pip install -r requirements_dev.txt
     invoke -l
-    
+
 
 Related
 -------
