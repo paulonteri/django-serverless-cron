@@ -13,11 +13,10 @@ django-serverless-cron 🦡
 
 .. image:: https://readthedocs.org/projects/django-serverless-cron/badge/?version=latest
      :target: http://django-serverless-cron.readthedocs.io/?badge=latest
-     
+
 
 django-serverless-cron is a Django app with a simpler approach running cron jobs.
-This is done through exposing a HTTP endpoint to invoke the jobs.
-This allows you to run any task without having to manage always-on infrastructure.
+This is done through exposing a HTTP endpoint to invoke the jobs that allows you to run any task without having to manage always-on infrastructure.
 
 There is also an option to run jobs via management commands and the Django admin.
 
@@ -126,8 +125,8 @@ or
     import requests
 
     x = requests.get('http://localhost:8000/run')
-    
-    
+
+
 Running Jobs through the management command
 """""""""""""""""""""""""""""""""""""""""""
 
