@@ -11,6 +11,7 @@ on:
       - "setup.cfg"
       - "requirements.txt"
       - "requirements_dev.txt"
+      - "!django_serverless_cron/__init__.py"
   pull_request:
     branches: [master]
 
