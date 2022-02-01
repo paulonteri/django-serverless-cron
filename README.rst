@@ -141,7 +141,7 @@ You can alternatively add the `--single_run='True'` option to run the jobs just 
 In Production
 ^^^^^^^^^^^^^
 
-Similar to in development, we can call the `/run` path via managed services which are usually ridiculously cheap. Examples:
+Similar to in development, we can call the `/run` path via fully managed services which are usually ridiculously cheap. Examples:
 
 - https://cloud.google.com/scheduler -> Great feature set, easy to use, reasonable free tier & very cheap.
 - https://aws.amazon.com/eventbridge
@@ -150,16 +150,24 @@ Similar to in development, we can call the `/run` path via managed services whic
 - https://www.easycron.com
 - https://cronhub.io
 - https://cronless.com -> Has 30 Second Cron Jobs
+- https://github.com/features/actions; https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onschedule -> eg making a HTTP request using `curl` in a step
 - https://www.cronjob.de
+- https://zeplo.io
 - https://catalyst.zoho.com/help/cron.html
 - https://www.cronjobservices.com
 
-Related
--------
+Related media
+-------------
 
-- https://dev.to/googlecloud/when-you-re-not-around-trigger-cloud-run-on-a-schedule-53p4
+For more learning check out:
+
+- https://dev.to/googlecloud/when-you-re-not-around-trigger-cloud-run-on-a-schedule-53p4 | https://youtu.be/XIwbIimM49Y
 - https://aws.amazon.com/blogs/compute/using-api-destinations-with-amazon-eventbridge/
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html
+- https://www.ibm.com/cloud/blog/how-to-schedule-rest-api-calls-on-ibm-cloud
+- https://vercel.com/docs/concepts/solutions/cron-jobs
+- https://www.dailyhostnews.com/google-cloud-launches-fully-managed-cron-job-scheduler-for-enterprises
+- Cloud Scheduler from Fireship https://www.youtube.com/watch?v=WUPEUjvSBW8
 
 Credits
 -------
