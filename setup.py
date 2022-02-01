@@ -48,7 +48,7 @@ requirements = open('requirements.txt').readlines()
 setup(
     name='django-serverless-cron',
     version=version,
-    description="""Django Serverless Cron""",
+    description="""Django Serverless Cron 🦡""",
     long_description=readme + '\n\n' + history,
     author='Paul Onteri',
     author_email='me@paulonteri.com',
