@@ -74,12 +74,12 @@ Add jobs to your settings file:
         #   {'kwarg1': 'foo'}                # kwargs passed to the function
         # ),
         (
-            '1_day',
+            '1_days',
             'your_app.services.your_job_function',
             {'kwarg1': 'foo', 'kwarg2': 'bar'}
         ),
         (
-            '1_hour',
+            '1_hours',
             'mail.jobs.send_mail_function',
             {"is_bulk": True}
         ),
