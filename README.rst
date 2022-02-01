@@ -1,5 +1,5 @@
 =============================
-django-serverless-cron
+django-serverless-cron 🦡
 =============================
 
 .. image:: https://badge.fury.io/py/django-serverless-cron.svg
@@ -14,9 +14,27 @@ django-serverless-cron
 .. image:: https://readthedocs.org/projects/django-serverless-cron/badge/?version=latest
      :target: http://django-serverless-cron.readthedocs.io/?badge=latest
 
-django-serverless-cron is a Django app with a simpler approach running cron jobs (mostly in a serverless environment) through HTTP requests with an integration with the Django admin. This allows you to run any task without having to manage always-on infrastructure.
+https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
+
+django-serverless-cron is a Django app with a simpler approach running cron jobs.
+This is done through exposing a HTTP endpoint to invoke the jobs.
+This allows you to run any task without having to manage always-on infrastructure.
 
 There is also an option to run jobs via management commands and the Django admin.
+
+Why?
+----
+
+This is essentially a replacement/supplement for a traditional OS 'cron' or 'job scheduler' system:
+
+- Serverless cron jobs no-longer a pain.
+- Schedule jobs to run at a frequency that is less than 1 min. (crontab is limited to 1 min)
+- The machine running crontab is no longer a single point of failure.
+- The problem with the above systems is that they are often configured at the operating system level, which means their configuration is probably not easily 'portable' and 'debug-able' (if you are developing on Windows, the scheduler works differently from Linux or Unix). Also can not easily be integrated into a development environment.
+- Manually triggered cron jobs. Eg: via the Django Admin.
+- Alternative to cron services that aren't always available on free (and sometimes paid) web hosting services.
+- Easier access to cron job execution logs and monitoring execution failures.
+- No need to learn crontab. Think of it as a friendlier alternative to traditional cron jobs. Simple cron job creation. No need for cron syntax, no guessing on job frequency. Easy controls.
 
 Documentation
 -------------
@@ -53,7 +71,7 @@ Add jobs to your settings file:
 
     CRONJOBS = [
         # (
-        #   '1_hours',                       # frequency (days, minutes, hours, weeks) -> in this case, every one hour
+        #   '1_hours',                       # frequency (seconds, minutes, hours, days, weeks) -> in this case, every one hour
         #   'mail.jobs.send_mail_function',  # path to task/function functions -> in this case, send_mail_function()
         #   {'kwarg1': 'foo'}                # kwargs passed to the function
         # ),
@@ -92,7 +110,7 @@ In Development
 ^^^^^^^^^^^^^^
 
 Running Jobs through HTTP requests
-"""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""
 
 Call the `/run` path to run all jobs:
 
@@ -115,38 +133,23 @@ In Production
 
 Similar to in development, we can call the `/run` path via managed services which are usually ridiculously cheap. Examples:
 
-- https://cron-job.org
-- https://cloud.google.com/scheduler
+- https://cloud.google.com/scheduler -> Great feature set, easy to use, reasonable free tier & very cheap.
+- https://aws.amazon.com/eventbridge
+- https://azure.microsoft.com/en-gb/services/logic-apps formerly https://docs.microsoft.com/en-us/azure/scheduler/scheduler-intro
+- https://cron-job.org/en/ -> Absolutely free and open-source: https://github.com/pschlan/cron-job.org
 - https://www.easycron.com
 - https://cronhub.io
-
-
-Tests
--------------
-
-Does the code actually work?
-
-::
-
-    source <YOURVIRTUALENV>/bin/activate
-    (myenv) $ pip install tox
-    (myenv) $ tox
-
-
-Development commands
----------------------
-
-::
-
-    pip install -r requirements_dev.txt
-    invoke -l
-
+- https://cronless.com -> Has 30 Second Cron Jobs
+- https://www.cronjob.de
+- https://catalyst.zoho.com/help/cron.html
+- https://www.cronjobservices.com
 
 Related
 -------
 
 - https://dev.to/googlecloud/when-you-re-not-around-trigger-cloud-run-on-a-schedule-53p4
-
+- https://aws.amazon.com/blogs/compute/using-api-destinations-with-amazon-eventbridge/
+- https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html
 
 Credits
 -------
