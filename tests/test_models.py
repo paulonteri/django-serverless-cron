@@ -5,7 +5,7 @@
 test_django_serverless_cron
 ------------
 
-Tests for `django_serverless_cron` admin module.
+Tests for `django_serverless_cron` models module.
 """
 
 from django.test import TestCase
