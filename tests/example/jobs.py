@@ -1,5 +1,3 @@
-
-
 def example_job_1():
     pass
 
