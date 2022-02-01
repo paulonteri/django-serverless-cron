@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'django_serverless_cron',
-    
+
 
     # if your app has other dependencies that need to be added to the site
     # they should be added here
@@ -112,3 +112,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+IS_IN_DEV_TESTING = True
