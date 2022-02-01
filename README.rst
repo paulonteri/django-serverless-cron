@@ -13,8 +13,7 @@ django-serverless-cron 🦡
 
 .. image:: https://readthedocs.org/projects/django-serverless-cron/badge/?version=latest
      :target: http://django-serverless-cron.readthedocs.io/?badge=latest
-
-https://github.com/kentcdodds/mdx-bundler#nextjs-esbuild-enoent
+     
 
 django-serverless-cron is a Django app with a simpler approach running cron jobs.
 This is done through exposing a HTTP endpoint to invoke the jobs.
