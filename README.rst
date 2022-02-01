@@ -127,6 +127,18 @@ or
     import requests
 
     x = requests.get('http://localhost:8000/run')
+    
+    
+Running Jobs through the management command
+"""""""""""""""""""""""""""""""""""""""""""
+
+This will run the jobs every 30 seconds:
+
+.. code-block:: bash
+
+    python manage.py serverless_cron_run
+
+You can alternatively add the `--single_run='True'` option to run the jobs just once.
 
 In Production
 ^^^^^^^^^^^^^
