@@ -36,5 +36,8 @@ class Command(BaseCommand):
                 run_all_jobs()
 
             # not run loop if in testing mode
-            if settings.IS_IN_DEV_TESTING == True:
-                break
+            try:
+                if settings.IS_IN_DEV_TESTING == True:
+                    break
+            except AttributeError:
+                pass
