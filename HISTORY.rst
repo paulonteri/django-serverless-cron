@@ -3,6 +3,12 @@
 History
 -------
 
+0.1.3 (2022-01-02)
+^^^^^^^^^^^^^^^^^^
+
+- fix bug in running the management command
+- wrap `run_all_jobs()` in a class
+
 0.1.2 (2022-01-01)
 ^^^^^^^^^^^^^^^^^^
 
