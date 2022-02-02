@@ -181,6 +181,7 @@ For more learning check out:
 - https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html
 - https://www.ibm.com/cloud/blog/how-to-schedule-rest-api-calls-on-ibm-cloud
 - https://vercel.com/docs/concepts/solutions/cron-jobs
+- cron-like recurring task scheduler design https://stackoverflow.com/a/3980935/10904662
 - https://www.dailyhostnews.com/google-cloud-launches-fully-managed-cron-job-scheduler-for-enterprises
 - Cloud Scheduler from Fireship https://www.youtube.com/watch?v=WUPEUjvSBW8
 
