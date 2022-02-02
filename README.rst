@@ -100,6 +100,13 @@ Add the jobs to your URL patterns:
         url(r'^', include(django_serverless_cron_urls))
         #...
     ]
+    
+Migrate
+^^^^^^^
+
+.. code-block:: bash
+
+    python manage.py migrate
 
 Running Jobs
 ------------
