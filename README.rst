@@ -39,6 +39,14 @@ Documentation
 
 Documentation is graciously hosted at https://django-serverless-cron.readthedocs.io.
 
+Contributions
+-------------
+
+Feel free to make pull requests and submit issues/requests.
+Find more detailed instructions under the `contributing` section.
+
+Alternatively, you can leave a star on the repo to show your support. 🙂
+
 Quickstart
 ----------
 
@@ -100,7 +108,7 @@ Add the jobs to your URL patterns:
         url(r'^', include(django_serverless_cron_urls))
         #...
     ]
-    
+
 Migrate
 ^^^^^^^
 
