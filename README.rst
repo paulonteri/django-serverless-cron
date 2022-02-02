@@ -67,7 +67,7 @@ Add jobs to your settings file:
 
 .. code-block:: python
 
-    CRONJOBS = [
+    SERVERLESS_CRONJOBS = [
         # (
         #   '1_hours',                       # frequency (seconds, minutes, hours, days, weeks) -> in this case, every one hour
         #   'mail.jobs.send_mail_function',  # path to task/function functions -> in this case, send_mail_function()
