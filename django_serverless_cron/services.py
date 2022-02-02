@@ -113,15 +113,26 @@ class Job:
         return self.__str__()
 
 
-def run_all_jobs():
+class RunJobs:
     """
-    Runs all jobs defined in settings
-    """
-    app_settings = Settings(settings)
-    jobs = [
-        Job(frequency=frequency, function_path=function_path, kwargs=kwargs)
-        for frequency, function_path, kwargs in app_settings.SERVERLESS_CRONJOBS
-    ]
+    A class used to run jobs defined in settings
 
-    for job in jobs:
-        job.run()
+    Methods
+    -------
+    run_all_jobs()
+        Runs all jobs defined in settings
+    """
+
+    @staticmethod
+    def run_all_jobs():
+        """
+        Runs all jobs defined in settings
+        """
+        app_settings = Settings(settings)
+        jobs = [
+            Job(frequency=frequency, function_path=function_path, kwargs=kwargs)
+            for frequency, function_path, kwargs in app_settings.SERVERLESS_CRONJOBS
+        ]
+
+        for job in jobs:
+            job.run()

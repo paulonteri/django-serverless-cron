@@ -6,7 +6,7 @@ from datetime import datetime
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from django_serverless_cron.services import run_all_jobs
+from django_serverless_cron.services import RunJobs
 
 
 class Command(BaseCommand):
@@ -25,7 +25,7 @@ class Command(BaseCommand):
 
         if single_run is True:
             print("----------------------------- Jobs running once -----------------------------")
-            run_all_jobs()
+            RunJobs.run_all_jobs()
             return
 
         last_run_time = None
@@ -33,7 +33,7 @@ class Command(BaseCommand):
             if last_run_time is None or (datetime.now() - last_run_time).seconds >= 30:
                 print("----------------------- Jobs running. Will run again in 30 seconds --------------------------")
                 last_run_time = datetime.now()
-                run_all_jobs()
+                RunJobs.run_all_jobs()
 
             # not run loop if in testing mode
             try:

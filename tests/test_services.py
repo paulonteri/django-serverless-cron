@@ -12,7 +12,7 @@ from django.test import TestCase
 from django.test.utils import override_settings
 
 from django_serverless_cron.models import JobRun
-from django_serverless_cron.services import Job, run_all_jobs
+from django_serverless_cron.services import Job, RunJobs
 
 
 class TestJobs(TestCase):
@@ -60,5 +60,5 @@ class TestRunAllJobs(TestCase):
     ])
     def test_run_all_jobs_runs_jobs(self):
         self.assertEqual(JobRun.objects.all().count(), 0)
-        run_all_jobs()
+        RunJobs.run_all_jobs()
         self.assertEqual(JobRun.objects.all().count(), 2)
