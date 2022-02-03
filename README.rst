@@ -25,7 +25,7 @@ Why?
 
 This is essentially a replacement/supplement for a traditional OS 'cron' or 'job scheduler' system:
 
-- Serverless cron jobs no-longer a pain.
+- Serverless cron jobs no-longer a pain. Note that if you have alternatives like django-crontab or celery working well for you, good for you! You probably don't need this. However, it's okay to be curious.
 - Schedule jobs to run at a frequency that is less than 1 min. (crontab is limited to 1 min)
 - The machine running crontab is no longer a single point of failure.
 - The problem with the above systems is that they are often configured at the operating system level, which means their configuration is probably not easily 'portable' and 'debug-able' (if you are developing on Windows, the scheduler works differently from Linux or Unix). Also can not easily be integrated into a development environment.
@@ -84,12 +84,12 @@ Add jobs to your settings file:
         (
             '1_days',
             'your_app.services.your_job_function',
-            {'kwarg1': 'foo', 'kwarg2': 'bar'}
+            {'kwarg1': 'foo', 'kwarg2': 'bar', "is_bulk": True}
         ),
         (
             '1_hours',
             'mail.jobs.send_mail_function',
-            {"is_bulk": True}
+            {}                               # job without kwargs
         ),
     ]
 
