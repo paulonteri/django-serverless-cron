@@ -138,9 +138,10 @@ class RunJobs:
             job.run()
 
 
-def purge_jobs(n):
+def purge_jobs(n: int):
     """
     Method executed for purging n number of jobs
     """
     jobs = JobRun.objects.all().order_by('time_attempted_running')[:n]
-    jobs.delete()
+    for job in jobs:
+        job.delete()

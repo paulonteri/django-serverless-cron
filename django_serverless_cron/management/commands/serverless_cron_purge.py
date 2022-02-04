@@ -12,7 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         try:
             n = kwargs['n']
-            purge_jobs(n)
+            purge_jobs(int(n))
             self.stdout.write(self.style.SUCCESS(f'Successfully purged the last {n} old jobs'))
         except Exception as e:
             self.stderr.write(self.style.ERROR(e))
