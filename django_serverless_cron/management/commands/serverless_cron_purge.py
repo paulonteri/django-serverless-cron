@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = "Deletes old jobs from the Database"
 
     def add_arguments(self, parser):
-        parser.add_argument('-n', type=int, help='Number of jobs to remove from the least recent to the most recent')
+        parser.add_argument('-n', type=int, help='Number of jobs to remove from the least recent')
 
     def handle(self, *args, **kwargs):
         try:
