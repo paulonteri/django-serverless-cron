@@ -16,14 +16,15 @@ class RunJobsView(View):
         return HttpResponse('Done')
 
 
-def purge_jobs_view(request, num):
-    n = request.GET.get(num)
-    if n is None:
+def purge_jobs_view(request, n):
+    if n is None or n == '':
         return HttpResponseBadRequest('You must supply the number of jobs to be purged.')
+
     try:
         purge_jobs(n)
-        return HttpResponse(f'Last {n} jobs Purged Successfully.')
     except Exception as e:
         logger.exception(e, exc_info=True)
         logger.error(e)
         HttpResponseServerError('An error occurred. Working to resolve the issue.')
+
+    return HttpResponse(f'Last {n} jobs Purged Successfully.')
