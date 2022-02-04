@@ -1,6 +1,6 @@
 from django.core.management import BaseCommand
 
-from django_serverless_cron.services import purge_jobs
+from django_serverless_cron.services import PurgeJobRuns
 
 
 class Command(BaseCommand):
@@ -12,7 +12,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         try:
             n = kwargs['n']
-            purge_jobs(int(n))
+            PurgeJobRuns.purge_job_runs(int(n))
             self.stdout.write(self.style.SUCCESS(f'Successfully purged the last {n} old jobs'))
         except Exception as e:
             self.stderr.write(self.style.ERROR(e))
