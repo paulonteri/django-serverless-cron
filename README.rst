@@ -33,6 +33,7 @@ This is essentially a replacement/supplement for a traditional OS 'cron' or 'job
 - Alternative to cron services that aren't always available on free (and sometimes paid) web hosting services.
 - Easier access to cron job execution logs and monitoring execution failures.
 - No need to learn crontab. Think of it as a friendlier alternative to traditional cron jobs. Simple cron job creation. No need for cron syntax, no guessing on job frequency. Easy controls.
+- Designed around services like `Google Cloud Scheduler` and `Amazon EventBridge`.
 
 Documentation
 -------------
