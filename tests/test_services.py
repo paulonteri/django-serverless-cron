@@ -12,7 +12,7 @@ from django.test import TestCase
 from django.test.utils import override_settings
 
 from django_serverless_cron.models import JobRun
-from django_serverless_cron.services import Job, RunJobs, purge_jobs
+from django_serverless_cron.services import Job, RunJobs, PurgeJobRuns
 
 
 class TestJobs(TestCase):
@@ -71,5 +71,5 @@ class TestPurgeJobs(TestCase):
     ])
     def test_service_purge_jobs_purges(self):
         RunJobs.run_all_jobs()
-        purge_jobs(1)
+        PurgeJobRuns.purge_job_runs(1)
         self.assertEqual(JobRun.objects.all().count(), 1)
