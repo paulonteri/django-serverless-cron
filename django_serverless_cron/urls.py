@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from django.urls import re_path, path
+from django.urls import re_path
+
 from .views import RunJobsView, PurgeJobRunsView
 
 app_name = 'django_serverless_cron'
