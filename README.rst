@@ -101,12 +101,13 @@ Add the jobs to your URL patterns:
 
 .. code-block:: python
 
+    from django.urls import path, re_path, include #add re_path and include
     from django_serverless_cron import urls as django_serverless_cron_urls
 
 
     urlpatterns = [
         # ...
-        url(r'^', include(django_serverless_cron_urls))
+        re_path(r'^', include(django_serverless_cron_urls)),
         #...
     ]
 
